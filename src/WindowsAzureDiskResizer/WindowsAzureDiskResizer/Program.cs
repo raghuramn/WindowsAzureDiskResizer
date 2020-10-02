@@ -81,7 +81,7 @@ namespace WindowsAzureDiskResizer
             }
             catch (StorageException ex)
             {
-                Console.WriteLine("The specified storage account credentials are invalid.");
+                Console.WriteLine(ex.ToString());
                 return -1;
             }
 
