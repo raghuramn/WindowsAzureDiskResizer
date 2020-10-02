@@ -49,13 +49,13 @@ namespace WindowsAzureDiskResizer
                 return -1;
             }
 
-            // Verify size. Size for disk must be <= 1023 GB
-            if (newSizeInGb > 1023)
-            {
-                Console.WriteLine("The given disk size exceeds 1023 GB. Windows Azure will not be able to start the virtual machine stored on this disk if you continue.");
-                Console.WriteLine("See https://msdn.microsoft.com/en-us/library/azure/dn197896.aspx for more information.");
-                return -1;
-            }
+            //// Verify size. Size for disk must be <= 1023 GB
+            //if (newSizeInGb > 1023)
+            //{
+            //    Console.WriteLine("The given disk size exceeds 1023 GB. Windows Azure will not be able to start the virtual machine stored on this disk if you continue.");
+            //    Console.WriteLine("See https://msdn.microsoft.com/en-us/library/azure/dn197896.aspx for more information.");
+            //    return -1;
+            //}
 
             // Start the resize process
             return ResizeVhdBlob(newSizeInGb * 1024 * 1024 * 1024, blobUri, accountName, accountKey);
